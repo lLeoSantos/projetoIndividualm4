@@ -1,13 +1,21 @@
-public class Musica {
+public class Musica extends  Midia{
 
-    double duracao;
-    String artista;
-    int nota;
+    private double duracao;
+    private String artista;
+    protected int nota;
 
-    public double getDuracao() {
-        return duracao;
+    public Musica(String artista, int nota, double duracao){
+        setArtista(artista);
+        setNota(nota);
+        setDuracao(duracao);
     }
 
+    public void getDuracao() {
+        mostraDuracao();
+    }
+    private double mostraDuracao(){
+        return this.duracao;
+    }
     public void setDuracao(double duracao) {
         this.duracao = duracao;
     }

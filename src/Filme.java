@@ -1,4 +1,4 @@
-public class Filme {
+public class Filme extends Midia{
 
     double duracao;
     String tipo;

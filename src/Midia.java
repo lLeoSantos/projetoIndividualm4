@@ -1,15 +1,20 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
+
 public class Midia {
 
-    String titulo;
-    int ano;
-    String genero;
+   private String titulo;
+    private int ano;
+    private String genero;
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+        System.out.println("oi");
     }
 
     public int getAno() {
@@ -27,4 +32,6 @@ public class Midia {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
+
 }
