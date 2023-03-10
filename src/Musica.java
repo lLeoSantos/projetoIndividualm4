@@ -1,13 +1,13 @@
 public class Musica extends  Midia{
 
     private double duracao;
-    private String artista;
-    protected int nota;
+    private Artista artista;
+    private int nota;
 
-    public Musica(String artista, int nota, double duracao){
-        setArtista(artista);
-        setNota(nota);
-        setDuracao(duracao);
+    public Musica(String titulo, int ano, String genero, double duracao, Artista artista) {
+        super(titulo, ano, genero);
+        this.setDuracao(duracao);
+        this.setArtista(artista);
     }
 
     public void getDuracao() {
@@ -20,11 +20,11 @@ public class Musica extends  Midia{
         this.duracao = duracao;
     }
 
-    public String getArtista() {
+    public Artista getArtista() {
         return artista;
     }
 
-    public void setArtista(String artista) {
+    public void setArtista(Artista artista) {
         this.artista = artista;
     }
 

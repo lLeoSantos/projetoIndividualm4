@@ -1,8 +1,16 @@
 public class Artista {
     private String nome;
-    private int nascimento;
+    private String nascimento;
     private String premiacoes;
     private String genero;
+
+    public Artista(String nome, String nascimento, String premiacoes, String genero) {
+        this.nome = nome;
+        this.nascimento = nascimento;
+        this.premiacoes = premiacoes;
+        this.genero = genero;
+    }
+
 
     // getters e setters
 
@@ -14,11 +22,11 @@ public class Artista {
         this.nome = nome;
     }
 
-    public int getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(int nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
