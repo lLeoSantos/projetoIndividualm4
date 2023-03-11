@@ -2,8 +2,9 @@ public class Main {
     public static void main(String[] args) {
 
         Playlist lista = new Playlist();
+        BibliotecaDeMidias b = new BibliotecaDeMidias("Leonardo",lista,lista);
 
-        lista.tocar_playlist();
+        b.tocar_playlist();
     }
 
 

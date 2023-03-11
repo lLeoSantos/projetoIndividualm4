@@ -4,10 +4,10 @@ public class Filme extends Midia{
     String tipo;
     String[] elenco;
 
-    public Filme(String titulo, int ano, String genero, double duracao) {
+    public Filme(String titulo, int ano, String genero, double duracao, String[] elenco) {
         super(titulo, ano, genero);
         this.setDuracao(duracao);
-
+        this.elenco = elenco;
     }
 
     public double getDuracao() {
@@ -17,9 +17,9 @@ public class Filme extends Midia{
     public void setDuracao(double duracao) {
         this.duracao = duracao;
         if (duracao < 30){
-            setTipo("Curta");
+            this.setTipo("Curta");
         } else {
-            setTipo("Longa");
+            this.setTipo("Longa");
         }
     }
 

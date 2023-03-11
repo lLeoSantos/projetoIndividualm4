@@ -1,10 +1,10 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Playlist {
 
     //atributos
-    private Midia midia;
-    private Musica[] ordem;
+    private Midia[] ordem;
 
     private String midiaAtual;
 
@@ -15,19 +15,11 @@ public class Playlist {
 
     //getters e setters
 
-    public Midia getMidia() {
-        return midia;
-    }
-
-    public void setMidia(Midia midia) {
-        this.midia = midia;
-    }
-
     public Midia[] getOrdem() {
         return ordem;
     }
 
-    public void setOrdem(Musica[] ordem) {
+    public void setOrdem(Midia[] ordem) {
         this.ordem = ordem;
     }
 
@@ -43,22 +35,39 @@ public class Playlist {
 
     // metodos
 
-    public void tocar_playlist(){
-        this.criar_musicas();
+    public void playlist(boolean verifica, int verificador){
         Scanner insert = new Scanner(System.in);
         String resposta = null;
         String pergunta = "Play | Pause | Next | Prev | Stop";
+        String msg = null;
+        String msg2 = null;
+
+
+        if(verifica){
+            if (verificador == 0) {
+                this.criar_musicas();
+            }
+            msg = "Tocando: ";
+            msg2 = "Musica pausada";
+        } else {
+            if (verificador == 0) {
+                this.criar_filme();
+            }
+            msg = "Está passando: ";
+            msg2 = "Filme pausado";
+        }
+
         int cont = 0;
         for (int i = 0; i < this.getOrdem().length;){
             this.setMidiaAtual((getOrdem()[i].getTitulo()));
             switch (cont) {
                 case 0 ->{
-                    System.out.println("Tocando: " + getMidiaAtual());
+                    System.out.println(msg + getMidiaAtual());
                     System.out.println(pergunta);
                     resposta = insert.nextLine();
                 }
                 case 1 -> {
-                    System.out.println("Musica Pausada");
+                    System.out.println(msg2);
                     System.out.println(pergunta);
                     resposta = insert.nextLine();
                 }
@@ -88,6 +97,19 @@ public class Playlist {
 
         }
         System.out.println("Sua playlist chegou ao fim");
+        System.out.println("Deseja embaralhar as midias e inicar a playlist novamente? ");
+        resposta = insert.nextLine();
+        if (resposta.equalsIgnoreCase("Sim")){
+            Random random = new Random();
+            int quantidade = this.getOrdem().length;
+            for (int i = 0; i < quantidade; i++) {
+                int posicao = random.nextInt(quantidade);
+                Midia troca = this.getOrdem()[i];
+                this.getOrdem()[i] = this.getOrdem()[posicao];
+                this.getOrdem()[posicao] = troca;
+            }
+            playlist(verifica, 1);
+        }
     }
 
 
@@ -96,7 +118,7 @@ public class Playlist {
 
         artista[0] = new Artista("Kawe","18/01/1998","MTV Miaw 2022","Masc");
         artista[1] = new Artista("L7NNON","30/03/1994","","Masc");
-        artista[2] = new Artista("Ananda","01/09/2003","Tiktok Wars","Masc");
+        artista[2] = new Artista("Ananda","01/09/2003","Tiktok Wars","Fem");
 
 
 
@@ -111,5 +133,24 @@ public class Playlist {
         conjunto[4] = new Musica("Colapso",2021,"Hip-hop",2.41,artista[2]);
 
         setOrdem(conjunto);
+    }
+
+
+    private void criar_filme(){
+
+        String[] elenco = {"Joao", "Ana", "Jubileu", "Lucas", "Rosa"};
+
+
+
+
+
+        Filme[] filmes = new Filme[4];
+
+        filmes[0] = new Filme("500 dias com ela",2009,"romance",1.35, elenco);
+        filmes[1] = new Filme("Vingadores: Ultimato",2019,"Ação/Ficção científica",3.02, elenco);
+        filmes[2] = new Filme("Tropa de elite",2007,"Ação/Crime",1.55, elenco);
+        filmes[3] = new Filme("Avatar: O Caminho da Água",2022,"Ficção científica/Ação",3.12, elenco);
+
+        this.setOrdem(filmes);
     }
 }
