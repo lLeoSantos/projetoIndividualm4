@@ -5,6 +5,7 @@ public class Playlist {
 
     //atributos
     private Midia[] ordem;
+    private Midia conjunto;
 
     private String midiaAtual;
 
@@ -35,7 +36,12 @@ public class Playlist {
 
     // metodos
 
-    public void playlist(boolean verifica, int verificador){
+    public void playlist(boolean verifica, int verificador) {
+        criar_playlist(verifica, verificador);
+    }
+
+
+    private void criar_playlist(boolean verifica, int verificador){
         Scanner insert = new Scanner(System.in);
         String resposta = null;
         String pergunta = "Play | Pause | Next | Prev | Stop";
@@ -43,7 +49,7 @@ public class Playlist {
         String msg2 = null;
 
 
-        if(verifica){
+        if (verifica) {
             if (verificador == 0) {
                 this.criar_musicas();
             }
@@ -58,10 +64,10 @@ public class Playlist {
         }
 
         int cont = 0;
-        for (int i = 0; i < this.getOrdem().length;){
+        for (int i = 0; i < this.getOrdem().length; ) {
             this.setMidiaAtual((getOrdem()[i].getTitulo()));
             switch (cont) {
-                case 0 ->{
+                case 0 -> {
                     System.out.println(msg + getMidiaAtual());
                     System.out.println(pergunta);
                     resposta = insert.nextLine();
@@ -78,14 +84,14 @@ public class Playlist {
             } else if (resposta.equalsIgnoreCase("Pause")) {
                 cont = 1;
             } else if (resposta.equalsIgnoreCase("Next")) {
-                    cont = 0;
-                if ((i+1) > getOrdem().length - 1){
+                cont = 0;
+                if ((i + 1) > getOrdem().length - 1) {
                     i = 0;
                 } else {
                     i++;
                 }
             } else if (resposta.equalsIgnoreCase("Prev")) {
-                if((i-1) >= 0){
+                if ((i - 1) >= 0) {
                     cont = 0;
                     i--;
                 } else {
@@ -97,21 +103,13 @@ public class Playlist {
 
         }
         System.out.println("Sua playlist chegou ao fim");
-        System.out.println("Deseja embaralhar as midias e inicar a playlist novamente? ");
+        System.out.println("Deseja embaralhar as midias e inicar a playlist novamente? Sim  |  Não ");
         resposta = insert.nextLine();
-        if (resposta.equalsIgnoreCase("Sim")){
-            Random random = new Random();
-            int quantidade = this.getOrdem().length;
-            for (int i = 0; i < quantidade; i++) {
-                int posicao = random.nextInt(quantidade);
-                Midia troca = this.getOrdem()[i];
-                this.getOrdem()[i] = this.getOrdem()[posicao];
-                this.getOrdem()[posicao] = troca;
-            }
+        if (resposta.equalsIgnoreCase("Sim")) {
+            setOrdem(random(getOrdem()));
             playlist(verifica, 1);
         }
     }
-
 
     private void criar_musicas(){
         Artista[] artista = new Artista[3];
@@ -120,18 +118,13 @@ public class Playlist {
         artista[1] = new Artista("L7NNON","30/03/1994","","Masc");
         artista[2] = new Artista("Ananda","01/09/2003","Tiktok Wars","Fem");
 
-
-
-
-
         Musica[] conjunto = new Musica[5];
 
         conjunto[0] = new Musica("Rubi",2021,"rap",2.37,artista[0]);
         conjunto[1] = new Musica("Barcelona",2018, "rap",3.43,artista[1]);
         conjunto[2] = new Musica("Kartie",2019,"Pop",3.41,artista[2]);
-        conjunto[3] = new Musica("Nada é pra sempre",2020,"Hip-hop",3.49,artista[0]);
-        conjunto[4] = new Musica("Colapso",2021,"Hip-hop",2.41,artista[2]);
-
+        conjunto[3] = new Musica("Nada é pra sempre",2020,"Hip-hop",3.49,artista[1]);
+        conjunto[4] = new Musica("Colapso",2021,"Hip-hop",2.41,artista[0]);
         setOrdem(conjunto);
     }
 
@@ -152,5 +145,17 @@ public class Playlist {
         filmes[3] = new Filme("Avatar: O Caminho da Água",2022,"Ficção científica/Ação",3.12, elenco);
 
         this.setOrdem(filmes);
+    }
+
+    private Midia[] random(Midia[] array){
+        Random random = new Random();
+        int quantidade = array.length;
+        for (int i = 0; i < quantidade; i++) {
+            int posicao = random.nextInt(quantidade);
+            Midia troca = array[i];
+            array[i] = array[posicao];
+            array[posicao] = troca;
+        }
+        return array;
     }
 }

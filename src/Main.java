@@ -5,6 +5,10 @@ public class Main {
         BibliotecaDeMidias b = new BibliotecaDeMidias("Leonardo",lista,lista);
 
         b.tocar_playlist();
+
+
+
+
     }
 
 

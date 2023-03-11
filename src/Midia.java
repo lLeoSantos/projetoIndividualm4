@@ -6,6 +6,8 @@ public class Midia {
 
    private String titulo;
     private int ano;
+
+    private Musica musica;
     private String genero;
 
     public Midia(String titulo, int ano, String genero) {
@@ -39,6 +41,8 @@ public class Midia {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
+    // metodos
 
 
 }

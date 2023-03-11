@@ -43,7 +43,9 @@ public class BibliotecaDeMidias {
 
 
     public void tocar_playlist(){
-
+        inicia_playlist();
+    }
+    private void inicia_playlist(){
         Scanner insert = new Scanner(System.in);
         System.out.println("Qual playlist deseja iniciar? Filmes | Musicas");
         String resposta = insert.nextLine();
@@ -53,6 +55,7 @@ public class BibliotecaDeMidias {
         } else {
             this.getPlaylist()[1].playlist(true, 0);
         }
+
     }
 }
 

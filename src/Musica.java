@@ -35,4 +35,10 @@ public class Musica extends  Midia{
     public void setNota(int nota) {
         this.nota = nota;
     }
+
+    //metodos
+
+
+
 }
+

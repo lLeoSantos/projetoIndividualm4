@@ -45,4 +45,8 @@ public class Artista {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
+    // Metodos
+
+
 }
