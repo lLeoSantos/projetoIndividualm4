@@ -52,9 +52,12 @@ public class BibliotecaDeMidias {
 
         if (resposta.equalsIgnoreCase("Filmes")){
             this.getPlaylist()[0].playlist(false, 0);
+
         } else {
             this.getPlaylist()[1].playlist(true, 0);
         }
+
+
 
     }
 }

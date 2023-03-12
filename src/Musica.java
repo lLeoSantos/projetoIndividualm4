@@ -10,13 +10,17 @@ public class Musica extends  Midia{
         this.setArtista(artista);
     }
 
-    public void getDuracao() {
-        mostraDuracao();
+    public double getDuracao() {
+        return mostraDuracao();
     }
     private double mostraDuracao(){
         return this.duracao;
     }
     public void setDuracao(double duracao) {
+        defineDuracao(duracao);
+    }
+
+    private void defineDuracao(double duracao){
         this.duracao = duracao;
     }
 
@@ -34,6 +38,14 @@ public class Musica extends  Midia{
 
     public void setNota(int nota) {
         this.nota = nota;
+    }
+
+    public void getStatus(){
+        System.out.print("Ano: " + this.getAno() + " | ");
+        System.out.print("Genero: " + this.getGenero() + " | ");
+        System.out.print("Duração: " + this.getDuracao() + " | ");
+        System.out.print("Artista: " + getArtista().getNome() + " | ");
+        System.out.println();
     }
 
     //metodos

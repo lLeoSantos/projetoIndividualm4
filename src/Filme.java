@@ -2,12 +2,12 @@ public class Filme extends Midia{
 
     double duracao;
     String tipo;
-    String[] elenco;
+    Ator[] elenco;
 
-    public Filme(String titulo, int ano, String genero, double duracao, String[] elenco) {
+    public Filme(String titulo, int ano, String genero, double duracao, Ator[] elenco) {
         super(titulo, ano, genero);
         this.setDuracao(duracao);
-        this.elenco = elenco;
+        this.setElenco(elenco);
     }
 
     public double getDuracao() {
@@ -16,7 +16,7 @@ public class Filme extends Midia{
 
     public void setDuracao(double duracao) {
         this.duracao = duracao;
-        if (duracao < 30){
+        if (duracao <= 0.30){
             this.setTipo("Curta");
         } else {
             this.setTipo("Longa");
@@ -31,11 +31,24 @@ public class Filme extends Midia{
         this.tipo = tipo;
     }
 
-    public String[] getElenco() {
+    public Ator[] getElenco() {
         return elenco;
     }
 
-    public void setElenco(String[] elenco) {
+    public void setElenco(Ator[] elenco) {
         this.elenco = elenco;
+    }
+
+    public void getStatus(){
+
+
+        System.out.print("Ano: " + this.getAno() + " | ");
+        System.out.print("Genero: " + this.getGenero() + " | ");
+        System.out.print("Duração: " + this.getDuracao() + " | ");
+        System.out.print("Artista: ");
+        for (int i = 0; i < getElenco().length; i++){
+            System.out.print("[" + getElenco()[i].getNome() + "]");
+        }
+        System.out.println();
     }
 }

@@ -6,8 +6,6 @@ public class Midia {
 
    private String titulo;
     private int ano;
-
-    private Musica musica;
     private String genero;
 
     public Midia(String titulo, int ano, String genero) {
@@ -23,7 +21,6 @@ public class Midia {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-        System.out.println("oi");
     }
 
     public int getAno() {

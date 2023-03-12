@@ -65,10 +65,11 @@ public class Playlist {
 
         int cont = 0;
         for (int i = 0; i < this.getOrdem().length; ) {
-            this.setMidiaAtual((getOrdem()[i].getTitulo()));
+            this.setMidiaAtual(getOrdem()[i].getTitulo());
             switch (cont) {
                 case 0 -> {
                     System.out.println(msg + getMidiaAtual());
+                    mostra_status(getOrdem(),verifica, i);
                     System.out.println(pergunta);
                     resposta = insert.nextLine();
                 }
@@ -131,19 +132,22 @@ public class Playlist {
 
     private void criar_filme(){
 
-        String[] elenco = {"Joao", "Ana", "Jubileu", "Lucas", "Rosa"};
+        Ator[] elenco = new Ator[5];
+
+        elenco[0] = new Ator("Joao","18/05/1956","Oscar","Masc");
+        elenco[1] = new Ator("Ana", "05/12/1981","Melhor atriz","Fem");
+        elenco[2] = new Ator("Jubileu","10/04/1990","Revelação do ano", "Ind");
+        elenco[3] = new Ator("Lucas", "22/08/1987","Melhor atuação","Masc");
+        elenco[4] = new Ator("Rosa","30/09/1990","Oscar","Ind");
 
 
-
-
-
-        Filme[] filmes = new Filme[4];
+        Filme[] filmes = new Filme[5];
 
         filmes[0] = new Filme("500 dias com ela",2009,"romance",1.35, elenco);
         filmes[1] = new Filme("Vingadores: Ultimato",2019,"Ação/Ficção científica",3.02, elenco);
         filmes[2] = new Filme("Tropa de elite",2007,"Ação/Crime",1.55, elenco);
         filmes[3] = new Filme("Avatar: O Caminho da Água",2022,"Ficção científica/Ação",3.12, elenco);
-
+        filmes[4] = new Filme("Pelé",1980,"Documentario",0.30,elenco);
         this.setOrdem(filmes);
     }
 
@@ -157,5 +161,17 @@ public class Playlist {
             array[posicao] = troca;
         }
         return array;
+    }
+
+    private void mostra_status(Midia[] array, boolean verifaca, int i){
+
+        if (verifaca){
+            Musica musica = (Musica) array[i];
+            musica.getStatus();
+        } else {
+            Filme filme = (Filme) array[i];
+            filme.getStatus();
+        }
+
     }
 }
