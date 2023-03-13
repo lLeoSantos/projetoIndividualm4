@@ -50,7 +50,7 @@ Todo o código foi construído em Java e respeitando todos os requisitos propost
         ````
     - Para randomizar as midias
         ```java
-        private void Midia[] random()
+        private Midia[] random()
         ````
     - Mostrar os status da mídia
         ````java
