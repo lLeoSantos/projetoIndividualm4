@@ -1,4 +1,4 @@
-#  Toda Mídia em Todo Lugar ao Mesmo Tempo
+# Toda Mídia em Todo Lugar ao Mesmo Tempo
 ## Esse é o projeto individual do módulo 4 da Resila
 ----
 <br>
@@ -22,7 +22,7 @@ Você foi contratado para modelar a biblioteca digital de mídias dos usuários 
 ## Sobre os códigos:
 ---
 
-Todo o código foi construido em Java e  respeitando todos os requisitos propostos, com todas as classes (**Midia, Música,Filme, Artista, Ator, Músico, Biblioteca de mídias e PLaylist**).  
+Todo o código foi construído em Java e respeitando todos os requisitos propostos, com todas as classes (**Midia, Música, Filme, Artista, Ator, Músico, Biblioteca de mídias e PLaylist**).  
 
 <br>
 
@@ -33,7 +33,7 @@ Todo o código foi construido em Java e  respeitando todos os requisitos propost
 
 ## Métodos
 
-* Metodo principal:
+* Método principal:
     ````java
     public void tocar_playlist()
     ````
@@ -48,7 +48,7 @@ Todo o código foi construido em Java e  respeitando todos os requisitos propost
     	private void criar_musicas()
         private void criar_filmes()
         ````
-    - Para ranomizar as midias
+    - Para randomizar as midias
         ```java
         private void Midia[] random()
         ````
@@ -71,7 +71,7 @@ Todo o código foi construido em Java e  respeitando todos os requisitos propost
 <br>
 <br>
 
-## Ferramentas e lingagens utilizadas:
+## Ferramentas e linguagens utilizadas:
 
 
 
