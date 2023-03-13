@@ -134,11 +134,11 @@ public class Playlist {
 
         Ator[] elenco = new Ator[5];
 
-        elenco[0] = new Ator("Joao","18/05/1956","Oscar","Masc");
-        elenco[1] = new Ator("Ana", "05/12/1981","Melhor atriz","Fem");
-        elenco[2] = new Ator("Jubileu","10/04/1990","Revelação do ano", "Ind");
-        elenco[3] = new Ator("Lucas", "22/08/1987","Melhor atuação","Masc");
-        elenco[4] = new Ator("Rosa","30/09/1990","Oscar","Ind");
+        elenco[0] = new Ator("Joao","18/05/1956","Oscar","Masc","Cinema");
+        elenco[1] = new Ator("Ana", "05/12/1981","Melhor atriz","Fem", "Teatro");
+        elenco[2] = new Ator("Jubileu","10/04/1990","Revelação do ano", "Ind", "Cinema");
+        elenco[3] = new Ator("Lucas", "22/08/1987","Melhor atuação","Masc", "Outros");
+        elenco[4] = new Ator("Rosa","30/09/1990","Oscar","Ind", "Teatro");
 
 
         Filme[] filmes = new Filme[5];

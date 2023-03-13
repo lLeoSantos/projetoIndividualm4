@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
 
-        Playlist lista = new Playlist();
-        BibliotecaDeMidias b = new BibliotecaDeMidias("Leonardo",lista,lista);
+        Playlist playlist = new Playlist();
+        BibliotecaDeMidias biblioteca = new BibliotecaDeMidias("Leonardo",playlist,playlist);
 
-        b.tocar_playlist();
+        biblioteca.tocar_playlist();
 
 
 

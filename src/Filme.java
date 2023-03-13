@@ -45,6 +45,7 @@ public class Filme extends Midia{
         System.out.print("Ano: " + this.getAno() + " | ");
         System.out.print("Genero: " + this.getGenero() + " | ");
         System.out.print("Duração: " + this.getDuracao() + " | ");
+        System.out.print("Tipo: " + this.getTipo() + " | ");
         System.out.print("Artista: ");
         for (int i = 0; i < getElenco().length; i++){
             System.out.print("[" + getElenco()[i].getNome() + "]");
