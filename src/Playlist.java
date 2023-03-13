@@ -104,6 +104,8 @@ public class Playlist {
 
         }
         System.out.println("Sua playlist chegou ao fim");
+        System.out.println("===================");
+        System.out.println();
         System.out.println("Deseja embaralhar as midias e inicar a playlist novamente? Sim  |  Não ");
         resposta = insert.nextLine();
         if (resposta.equalsIgnoreCase("Sim")) {
@@ -168,10 +170,31 @@ public class Playlist {
         if (verifaca){
             Musica musica = (Musica) array[i];
             musica.getStatus();
+            dar_nota(musica);
+            System.out.println("=================");
         } else {
             Filme filme = (Filme) array[i];
             filme.getStatus();
         }
 
+    }
+
+    private void dar_nota(Musica musica){
+        Scanner insert = new Scanner(System.in);
+        System.out.println("Deseja dar uma nota para essa música? Sim | Não");
+        String resposta = insert.nextLine();
+        int nota = 0;
+
+        if (resposta.equalsIgnoreCase("Sim")){
+            System.out.println("Digite uma nota de 1 a 5");
+            nota = insert.nextInt();
+
+            if (nota > 0 && nota < 6){
+                musica.setNota(nota);
+            } else {
+                System.out.println("Nota é inválida");
+                dar_nota(musica);
+            }
+        }
     }
 }

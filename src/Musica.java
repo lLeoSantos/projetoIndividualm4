@@ -8,6 +8,7 @@ public class Musica extends  Midia{
         super(titulo, ano, genero);
         this.setDuracao(duracao);
         this.setArtista(artista);
+        this.setNota(0);
     }
 
     public double getDuracao() {
@@ -45,6 +46,7 @@ public class Musica extends  Midia{
         System.out.print("Genero: " + this.getGenero() + " | ");
         System.out.print("Duração: " + this.getDuracao() + " | ");
         System.out.print("Artista: " + getArtista().getNome() + " | ");
+        System.out.print("Nota: " + getNota() + " | ");
         System.out.println();
     }
 

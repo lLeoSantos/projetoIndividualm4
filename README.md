@@ -52,6 +52,14 @@ Todo o código foi construido em Java e  respeitando todos os requisitos propost
         ```java
         private void Midia[] random()
         ````
+    - Mostrar os status da mídia
+        ````java
+        public void getStatus()
+        ````
+    - Para dar nota a musica
+        ```java
+        private void dar_nota()
+        ````
 
 
 ## Para fazer uso do código, basta iniciar com o comando pré definido na Main.
