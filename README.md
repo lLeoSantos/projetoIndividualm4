@@ -13,8 +13,8 @@ Você foi contratado para modelar a biblioteca digital de mídias dos usuários 
   
     
 
-<img src="./src/img/requisito1.png">
-<img src="./src/img/requisito2.png">
+<img src="./src/img/requisito1.png" width="400px">
+<img src="./src/img/requisito2.png" width="400px">
 
 <br>
 <br>
@@ -75,7 +75,7 @@ Todo o código foi construído em Java e respeitando todos os requisitos propost
 
 
 
-<p align="left"> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="200" height="200"/> </a> </p>  <img src="./src/img/images.png" width="220px" alt="Intellij"> 
+<p align="left"> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="200" height="200"/> </a> <img src="https://i.postimg.cc/fLDV3JWY/kisspng-intellij-idea-jetbrains-integrated-development-env-5b9a70df9dd6c3-3468850615368480956465-rem.png" width="220px" alt="Intellij"> </p>
 
 
 <br>
