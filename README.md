@@ -75,7 +75,7 @@ Todo o código foi construído em Java e respeitando todos os requisitos propost
 
 
 
-<img src="./src/img/java.jpg" width="250px" alt="Java">  <img src="./src/img/intellij.jpg" width="220px" alt="Intellij"> 
+<p align="left"> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="200" height="200"/> </a> </p>  <img src="./src/img/images.png" width="220px" alt="Intellij"> 
 
 
 <br>

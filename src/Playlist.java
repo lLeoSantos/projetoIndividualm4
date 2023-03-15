@@ -181,19 +181,21 @@ public class Playlist {
 
     private void dar_nota(Musica musica){
         Scanner insert = new Scanner(System.in);
-        System.out.println("Deseja dar uma nota para essa música? Sim | Não");
-        String resposta = insert.nextLine();
-        int nota = 0;
+        if (musica.getNota() == 0) {
+            System.out.println("Deseja dar uma nota para essa música? Sim | Não");
+            String resposta = insert.nextLine();
+            int nota = 0;
 
-        if (resposta.equalsIgnoreCase("Sim")){
-            System.out.println("Digite uma nota de 1 a 5");
-            nota = insert.nextInt();
+            if (resposta.equalsIgnoreCase("Sim")) {
+                System.out.println("Digite uma nota de 1 a 5");
+                nota = insert.nextInt();
 
-            if (nota > 0 && nota < 6){
-                musica.setNota(nota);
-            } else {
-                System.out.println("Nota é inválida");
-                dar_nota(musica);
+                if (nota > 0 && nota < 6) {
+                    musica.setNota(nota);
+                } else {
+                    System.out.println("Nota é inválida");
+                    dar_nota(musica);
+                }
             }
         }
     }
